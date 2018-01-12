@@ -8,6 +8,7 @@
     "koa-body": "2.5.0",
     "koa-router": "7.3.0",
     "koa-static": "4.0.2",
+    "koa2-cors": "^2.0.5",
     "mongodb": "2.2.33"
   },
   "devDependencies": {},

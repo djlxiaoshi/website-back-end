@@ -1,7 +1,12 @@
-const Koa = require('koa');
-const app = new Koa();
+const Router = require('koa-router');
+const router = new Router();
 
-// 路由
-const userRoute = require('./user.route');
+const userRouter = require('./user.route');
+const commonRouter = require('./common.route');
 
-app.use(userRoute);
+router.use(
+  // commonRouter,
+  userRouter
+);
+
+module.exports =  router.routes();

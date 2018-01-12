@@ -5,19 +5,27 @@
 const path = require('path');
 const Koa = require('koa');
 const static = require('koa-static');
+const cors = require('koa2-cors');
+
+
 const app = new Koa();
 
-const userRoute = require('./router/user.route');
-// const articleRoute = require('./router/article.route');
-const staticPath = './static'
+const routes = require('./router/index.route');
 
+const staticPath = './static';
+
+// 跨域
+app.use(cors({
+  origin: 'http://websit.djl.com:3700',
+  credentials: true
+}));
 
 app.use(static(
   path.join( __dirname, staticPath)
 ));
 
 // 路由
-app.use(userRoute);
-// app.use(articleRoute);
+app.use(routes);
+
 
 app.listen(3000);

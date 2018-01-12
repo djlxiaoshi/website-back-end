@@ -52,7 +52,19 @@ const main = async (ctx, next) => {
   }
 };
 
-router.post('/login', koaBody(), main);
+const login =  async (ctx, next) => {
+  ctx.response.body = {
+    error_code: -300,
+    message: '服务器异常',
+    data: []
+  };
+};
+
+// router.post('/login', koaBody(), main);
+
+router.get('/login', login);
+
+router.get('/', login);
 
 const routes = router.routes();
 module.exports = routes;
