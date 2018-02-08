@@ -2,8 +2,27 @@
  * @Author JohnLi
  * @Date 2018/1/14 13:41
  */
-const MongoClient = require('mongodb').MongoClient;
+const MongoClient = require('mongodb');
 const dbConfig = require('../config');
 const DB_PATH = `${dbConfig.DBHost}:${dbConfig.DBPort}/${dbConfig.DBName}`;
 
-exports.db  = await MongoClient.connect(DB_PATH);
+let _connection;
+
+const connect = () => {
+  return MongoClient.connect(DB_PATH);
+};
+
+const connection = () => {
+  if (!_connection) {
+    _connection = connect();
+  }
+  
+  return _connection;
+};
+
+// exports default connection;
+
+exports.getCollection =  async function () {
+  const db = await connection();
+  return db;
+}

@@ -1,22 +1,17 @@
 const koaBody = require('koa-body');
-
-
 const Router = require('koa-router');
 const router = new Router({
   prefix: '/v1/users'
 });
-const MongoClient = require('mongodb').MongoClient;
-const dbConfig = require('../config');
-const DB_PATH = `${dbConfig.DBHost}:${dbConfig.DBPort}/${dbConfig.DBName}`;
 
+const userModel = require('../model/user.model');
 const login = async (ctx, next) => {
   const params = ctx.request.query;
   //  拿到用户名与密码
   const username = params.username;
   const password = params.password;
   try{
-    const db = await MongoClient.connect(DB_PATH);
-    const user = await db.collection('users').findOne({username: username});
+    const user = await userModel.getUserByName({username: username});
   
     if (user) {
       if (user.password === password) {
@@ -40,6 +35,7 @@ const login = async (ctx, next) => {
       };
     }
   } catch(e) {
+    console.log(e);
     ctx.response.body = {
       error_code: -898000,
       message: '服务器内部异常',
@@ -116,9 +112,6 @@ const modify = async(ctx, next) => {
   }
 };
 
-const connectDB = async () => {
-  const db = await MongoClient.connect(DB_PATH);
-}
 router.get('/', login);
 router.post('/', koaBody(), register);
 router.put('/', koaBody(), modify);
