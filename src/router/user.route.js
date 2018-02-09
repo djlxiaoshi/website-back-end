@@ -4,8 +4,12 @@ const router = new Router({
   prefix: '/v1/users'
 });
 
+const checkLogin = require('../middlewares/check').checkLogin;
+const checkNotLogin = require('../middlewares/check').checkNotLogin;
+
 const userModel = require('../model/user.model');
 const login = async (ctx, next) => {
+  // console.log('session', ctx.session);
   const params = ctx.method === 'POST' ? ctx.request.body : ctx.request.query;
   //  拿到用户名与密码
   const username = params.username;
@@ -15,9 +19,10 @@ const login = async (ctx, next) => {
     
     if (user) {
       if (user.password === password) {
+        ctx.session.user = user;
         ctx.response.body = {
           error_code: 0,
-          message: '用户已存在',
+          message: '登录成功',
           data: []
         };
       } else {
@@ -50,8 +55,7 @@ const register = async(ctx, next) => {
   const username = params.username;
   const password = params.password;
   try{
-    const db = await MongoClient.connect(DB_PATH);
-    const user = await db.collection('users').findOne({username: username});
+    const user = await userModel.getUserByName(username);
     
     if (user) {
       ctx.response.body = {
@@ -82,8 +86,8 @@ const modify = async(ctx, next) => {
   const username = params.username;
   const password = params.password;
   try{
-    const db = await MongoClient.connect(DB_PATH);
-    const user = await db.collection('users').findOne({username: username});
+    const user = await userModel.getUserByName(username);
+    
     if (user) {
       await db.collection('users').updateOne(
         {_id: user['_id']},
@@ -112,8 +116,29 @@ const modify = async(ctx, next) => {
   }
 };
 
+const logOut = async(ctx, next) => {
+  try{
+    ctx.session.user = null;
+    ctx.response.body = {
+      error_code: 0,
+      message: '登出成功',
+      data: []
+    };
+  } catch(e) {
+    console.log(e);
+    ctx.response.body = {
+      error_code: -898000,
+      message: '服务器内部异常',
+      data: []
+    };
+  }
+};
+
 router.post('/', koaBody(), login);
 router.get('/', login);
+
+router.post('/logout', koaBody(), logOut);
+router.get('/logout', logOut);
 
 router.post('/', koaBody(), register);
 router.put('/', koaBody(), modify);
