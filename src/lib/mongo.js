@@ -20,9 +20,4 @@ const connection = () => {
   return _connection;
 };
 
-// exports default connection;
-
-exports.getCollection =  async function () {
-  const db = await connection();
-  return db;
-}
+exports.connection =  connection;

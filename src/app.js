@@ -7,7 +7,6 @@ const Koa = require('koa');
 const static = require('koa-static');
 const cors = require('koa2-cors');
 
-
 const app = new Koa();
 
 const routes = require('./router/index.route');

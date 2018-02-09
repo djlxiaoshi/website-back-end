@@ -6,13 +6,13 @@ const router = new Router({
 
 const userModel = require('../model/user.model');
 const login = async (ctx, next) => {
-  const params = ctx.request.query;
+  const params = ctx.method === 'POST' ? ctx.request.body : ctx.request.query;
   //  拿到用户名与密码
   const username = params.username;
   const password = params.password;
   try{
-    const user = await userModel.getUserByName({username: username});
-  
+    const user = await userModel.getUserByName(username);
+    
     if (user) {
       if (user.password === password) {
         ctx.response.body = {
@@ -112,7 +112,9 @@ const modify = async(ctx, next) => {
   }
 };
 
+router.post('/', koaBody(), login);
 router.get('/', login);
+
 router.post('/', koaBody(), register);
 router.put('/', koaBody(), modify);
 
