@@ -33,7 +33,8 @@ const staticPath = './static';
 
 // 跨域
 app.use(cors({
-  origin: 'http://websit.djl.com:3700',
+  origin: 'http://website.djl.com:3001',
+  allowMethods: ['GET', 'POST', 'DELETE', 'DELETE', 'OPTIONS'],
   credentials: true
 }));
 

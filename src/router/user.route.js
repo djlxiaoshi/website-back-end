@@ -8,12 +8,15 @@ const checkLogin = require('../middlewares/check').checkLogin;
 const checkNotLogin = require('../middlewares/check').checkNotLogin;
 
 const userModel = require('../model/user.model');
+const getDb = require('../lib/mongo').connection;
+
 const login = async (ctx, next) => {
   // console.log('session', ctx.session);
   const params = ctx.method === 'POST' ? ctx.request.body : ctx.request.query;
   //  拿到用户名与密码
   const username = params.username;
   const password = params.password;
+  console.log(params);
   try{
     const user = await userModel.getUserByName(username);
     
@@ -64,6 +67,7 @@ const register = async(ctx, next) => {
         data: []
       };
     } else {
+      const db = await getDb();
       const user = await db.collection('users').insertOne({username: username, password: password});
       ctx.response.body = {
         error_code: 0,
@@ -74,7 +78,7 @@ const register = async(ctx, next) => {
   } catch(e) {
     ctx.response.body = {
       error_code: -898000,
-      message: '服务器内部异常',
+      message: '服务器内部异常' + e,
       data: []
     };
   }
@@ -134,7 +138,7 @@ const logOut = async(ctx, next) => {
   }
 };
 
-router.post('/', koaBody(), login);
+// router.post('/', koaBody(), login);
 router.get('/', login);
 
 router.post('/logout', koaBody(), logOut);
