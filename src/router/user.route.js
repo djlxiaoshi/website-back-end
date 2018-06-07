@@ -11,17 +11,17 @@ const userModel = require('../model/user.model');
 const getDb = require('../lib/mongo').connection;
 
 const login = async (ctx, next) => {
-  // console.log('session', ctx.session);
+  console.log('session', ctx.session);
   const params = ctx.method === 'POST' ? ctx.request.body : ctx.request.query;
   //  拿到用户名与密码
   const username = params.username;
   const password = params.password;
-  console.log(params);
   try{
     const user = await userModel.getUserByName(username);
     
     if (user) {
       if (user.password === password) {
+        // 保存防护登录信息
         ctx.session.user = user;
         ctx.response.body = {
           error_code: 0,
@@ -122,6 +122,7 @@ const modify = async(ctx, next) => {
 
 const logOut = async(ctx, next) => {
   try{
+    // 删除用户登录信息
     ctx.session.user = null;
     ctx.response.body = {
       error_code: 0,
@@ -138,8 +139,8 @@ const logOut = async(ctx, next) => {
   }
 };
 
-// router.post('/', koaBody(), login);
-router.get('/', login);
+// 登录
+router.get('/', checkLogin, login);
 
 router.post('/logout', koaBody(), logOut);
 router.get('/logout', logOut);
