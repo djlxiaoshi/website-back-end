@@ -7,4 +7,7 @@ module.exports = function (router) {
 
  // 删除指定id的collection
   router.delete('/collection/:id', collectionController.deleteCollection);
+
+  // 添加收藏
+  router.post('/collection', collectionController.createCollection);
 };

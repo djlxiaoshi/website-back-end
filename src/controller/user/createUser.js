@@ -2,9 +2,13 @@ const UserModel = require('../../model/userModel');
 
 exports.createUser = async (ctx, next) => {
   const params = ctx.request.body;
-  const result = await UserModel.create({
+  await UserModel.create({
     username: params.username,
-    password: params.password
+    password: params.password,
+    email: params.email
   });
-  ctx.body = result;
+  ctx.body = {
+    code: 0,
+    message: '注册成功'
+  };
 };
