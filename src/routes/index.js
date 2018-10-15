@@ -1,12 +1,13 @@
 // todo 登录校验
 
 const Router = require('koa-router');
-const userRouter = require('./user');
 const config = require('../config/config');
+const userRouter = require('./user');
+const collectionRouter = require('./collection');
 
 const router = new Router();
 
-// api cors
+// 处理cors跨域
 router.use(async (ctx, next) => {
   ctx.set('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
   ctx.set('Access-Control-Allow-Origin', config.allowOrigin);
@@ -16,7 +17,6 @@ router.use(async (ctx, next) => {
 });
 
 // 处理预请求
-// api options method
 router.options('*', async (ctx, next) => {
   ctx.set('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
   ctx.set('Access-Control-Allow-Origin', config.allowOrigin);
@@ -26,6 +26,7 @@ router.options('*', async (ctx, next) => {
 
 // 用户相关路由
 userRouter(router);
+collectionRouter(router);
 
 module.exports = router;
 
