@@ -20,11 +20,12 @@ exports.userLogin = async (ctx, next) => {
       ctx.session.user = result;
       ctx.body = {
         code: 0,
+        data: result,
         message: '登录成功'
       };
     } else {
       ctx.body = {
-        code: 0,
+        code: -3700,
         message: '密码不正确'
       };
     }
@@ -32,7 +33,7 @@ exports.userLogin = async (ctx, next) => {
   //  todo 用户登录异常处理
 
     ctx.body = {
-      code: 0,
+      code: -3701,
       message: '用户名不正确'
     };
   }
