@@ -1,23 +1,23 @@
 // 检测用户是否登录
 
 module.exports = {
-  checkLogin (ctx, next) {
+  checkLogin: async (ctx, next) => {
     if (!ctx.session.user) {
       return ctx.body = {
-        code: -3700,
+        code: -1000,
         message: '用户未登录'
       }
     }
-    next();
+    await next();
   },
 
-  checkNotLogin (req, res, next) {
-    if (req.session.user) {
+  checkNotLogin: async (ctx, next) => {
+    if (ctx.session.user) {
       return ctx.body = {
-        code: -3701,
-        message: '用户已登录'
+        code: -1001,
+        message: '用户已登录，请登出后再执行操作'
       };
     }
-    next();
+    await next();
   }
 };

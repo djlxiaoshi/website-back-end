@@ -4,6 +4,7 @@ const Router = require('koa-router');
 const config = require('../config/config');
 const userRouter = require('./user');
 const collectionRouter = require('./collection');
+const exploreRouter = require('./explore');
 
 const router = new Router();
 
@@ -27,6 +28,7 @@ router.options('*', async (ctx, next) => {
 // 用户相关路由
 userRouter(router);
 collectionRouter(router);
+exploreRouter(router);
 
 module.exports = router;
 
