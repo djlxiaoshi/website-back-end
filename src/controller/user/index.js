@@ -3,3 +3,4 @@ exports.createUser = require('./createUser').createUser;
 exports.updateUser = require('./updateUser').updateUser;
 exports.userLogin = require('./userLogin').userLogin;
 exports.userLogout = require('./userLogout').userLogout;
+exports.uploadAvatar = require('./uploadAvatar').uploadAvatar;

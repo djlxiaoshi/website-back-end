@@ -14,4 +14,6 @@ module.exports = function (router) {
   router.post('/user', checkNotLogin, userController.createUser);
   // 更新用户信息
   router.put('/user', checkLogin, userController.updateUser);
+  // 上传头像
+  router.post('/avatar', checkLogin, userController.uploadAvatar)
 };

@@ -1,11 +1,34 @@
 const UserModel = require('../../model/userModel');
+const { getUserByName } = require('./common');
 
 exports.updateUser = async (ctx, next) => {
-  const params = ctx.request.body;
-  const userMsg = {
+  const params = ctx.request.body,
+    sessionUser = ctx.session.user,
+    userMsg = {
     username: params.username,
-    password: params.password
+    info: params.info
   };
-  const result = await UserModel.findByIdAndUpdate(params.id, userMsg);
-  ctx.body = result;
+
+  // 判断用户名是否已经存在
+  if ((params.username !== sessionUser.username)) {
+    if (await getUserByName(params.username)) {
+      ctx.body = {
+        code: -4000,
+        data: {},
+        message: '该用户名已存在'
+      };
+      return;
+    }
+
+  }
+
+  await UserModel.findByIdAndUpdate(sessionUser._id, userMsg); // 返回的是根据条件查找到的文档
+
+  const updateUser = await UserModel.findById(sessionUser._id, 'username info avatar');
+
+  ctx.body = {
+    code: 0,
+    data: updateUser,
+    message: 'Success'
+  };
 };
