@@ -2,6 +2,10 @@ const mongoose = require('mongoose'),
   Schema = mongoose.Schema;
 
 const CollectionSchema = new Schema({
+  userId: {
+    type: String,
+    required: true
+  },
   title: {
     type: String,
     required: true
@@ -17,7 +21,11 @@ const CollectionSchema = new Schema({
   source: {
     type: String,
   },
-  time: {
+  createTime: {
+    type: String,
+    required: true
+  },
+  lastModifyTime: {
     type: String,
     required: true
   },
