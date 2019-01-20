@@ -5,6 +5,7 @@ const config = require('../config/config');
 const userRouter = require('./user');
 const collectionRouter = require('./collection');
 const exploreRouter = require('./explore');
+const tagsRouter = require('./tags');
 
 const router = new Router();
 
@@ -29,6 +30,7 @@ router.options('*', async (ctx, next) => {
 userRouter(router);
 collectionRouter(router);
 exploreRouter(router);
+tagsRouter(router);
 
 module.exports = router;
 

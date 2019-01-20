@@ -1,7 +1,9 @@
-const CollectionModel = require('../../model/collectionModel');
+const TagsModel = require('../../model/tagsModel');
 
-exports.getTagsListById = async (ctx, next) => {
-  const data = await CollectionModel.find();
+exports.getTagsListByUserId = async (ctx, next) => {
+  const sessionUser = ctx.session.user;
+  const data = await TagsModel.find({ownerId: sessionUser._id});
+
   ctx.body = {
     code: 0,
     message: 'success',

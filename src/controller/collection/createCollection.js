@@ -12,6 +12,7 @@ exports.createCollection = async (ctx, next) => {
     createTime: params.createTime,
     tags: params.tags
   });
+
   ctx.body = {
     code: 0,
     message: 'success',
