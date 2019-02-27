@@ -1,4 +1,5 @@
 const CollectionModel = require('../../model/collectionModel');
+const tagsModel = require('../../model/tagsModel');
 
 exports.updateCollection = async (ctx, next) => {
   const params = ctx.request.body;
@@ -8,12 +9,16 @@ exports.updateCollection = async (ctx, next) => {
     abstract: params.abstract,
     url: params.url,
     source: params.source,
-    lastModifyTime: params.lastModifyTime,
-    tags: params.tags
+    lastModifyTime: params.lastModifyTime
   });
+
   ctx.body = {
     code: 0,
     message: 'success',
     data: data
   };
+};
+
+exports.changeTags = async (ctx, next) =>  {
+
 };

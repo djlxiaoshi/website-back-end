@@ -12,9 +12,8 @@ const TagSchema = new Schema({
     type: String,
     required: true
   },
-  count: {
-    type: Number,
-    required: false
+  collections: {
+    type: Array
   },
   followers: {
     type: Number,

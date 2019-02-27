@@ -2,7 +2,7 @@ const mongoose = require('mongoose'),
   Schema = mongoose.Schema;
 
 const CollectionSchema = new Schema({
-  userId: {
+  ownerId: {
     type: String,
     required: true
   },
@@ -22,17 +22,12 @@ const CollectionSchema = new Schema({
     type: String,
   },
   createTime: {
-    type: String,
-    required: true
+    type: String
   },
   lastModifyTime: {
-    type: String,
-    required: true
+    type: String
   },
-  tags: {
-    type: Array,
-    required: true
-  }
+  tags: [{ type: String, ref: 'tag' }]
 });
 
 module.exports = mongoose.model('collection', CollectionSchema);

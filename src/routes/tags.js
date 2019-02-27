@@ -8,4 +8,5 @@ module.exports = function (router) {
 
   // 创建标签
   router.post('/tags', checkLogin, tagsController.createTag);
+
 };
