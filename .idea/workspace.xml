@@ -2,14 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="644d79f1-5ee4-4019-bea2-ed65966e9891" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/controller/collection/getCollectionsByTagId.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controller/tag/getTagById.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/collection/createCollection.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/collection/createCollection.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/collection/deleteCollection.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/collection/deleteCollection.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/collection/getCollection.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/collection/getCollection.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/collection/updateCollection.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/collection/updateCollection.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/tag/updateTag.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/tag/updateTag.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/collectionModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/collectionModel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/collection/getCollection.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/collection/getAllCollections.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/collection/getCollectionById.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/collection/getCollectionById.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/collection/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/collection/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/tag/createTag.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/tag/createTag.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/tag/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/tag/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/tagsModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/tagsModel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/collection.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/collection.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/tags.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/tags.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -25,29 +27,31 @@
     <session id="-1639373967">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="46" />
+          <entry key="project.closed" value="57" />
           <entry key="project.open.time.0" value="2" />
-          <entry key="project.open.time.1" value="14" />
-          <entry key="project.open.time.12" value="4" />
-          <entry key="project.open.time.13" value="3" />
+          <entry key="project.open.time.1" value="17" />
+          <entry key="project.open.time.12" value="6" />
+          <entry key="project.open.time.13" value="4" />
           <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.15" value="3" />
+          <entry key="project.open.time.16" value="1" />
           <entry key="project.open.time.17" value="1" />
-          <entry key="project.open.time.2" value="8" />
+          <entry key="project.open.time.2" value="10" />
           <entry key="project.open.time.20" value="1" />
           <entry key="project.open.time.22" value="2" />
           <entry key="project.open.time.25" value="1" />
           <entry key="project.open.time.28" value="1" />
           <entry key="project.open.time.3" value="3" />
           <entry key="project.open.time.33" value="1" />
+          <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="47" />
+          <entry key="project.opened" value="57" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="html" value="11" />
-          <entry key="js" value="6488" />
+          <entry key="js" value="7062" />
           <entry key="json" value="40" />
         </counts>
       </usages-collector>
@@ -55,7 +59,7 @@
         <counts>
           <entry key="HTML" value="11" />
           <entry key="JSON" value="40" />
-          <entry key="JavaScript" value="6488" />
+          <entry key="JavaScript" value="7062" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -64,7 +68,7 @@
           <entry key="522" value="1" />
           <entry key="608" value="1" />
           <entry key="html" value="1" />
-          <entry key="js" value="148" />
+          <entry key="js" value="157" />
           <entry key="json" value="4" />
           <entry key="png" value="6" />
         </counts>
@@ -74,7 +78,7 @@
           <entry key="HTML" value="1" />
           <entry key="Image" value="6" />
           <entry key="JSON" value="4" />
-          <entry key="JavaScript" value="151" />
+          <entry key="JavaScript" value="160" />
         </counts>
       </usages-collector>
     </session>
@@ -82,46 +86,28 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/controller/collection/updateCollection.js">
+        <entry file="file://$PROJECT_DIR$/src/controller/tag/getTagById.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="10" column="26" lean-forward="true" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+            <state relative-caret-position="425">
+              <caret line="17" column="27" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/controller/collection/createCollection.js">
+        <entry file="file://$PROJECT_DIR$/src/controller/tag/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="21" column="46" selection-start-line="21" selection-start-column="46" selection-end-line="21" selection-end-column="46" />
+            <state relative-caret-position="50">
+              <caret line="2" column="50" selection-start-line="2" selection-start-column="50" selection-end-line="2" selection-end-column="50" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/controller/tag/updateTag.js">
+        <entry file="file://$PROJECT_DIR$/src/routes/tags.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="6" column="64" selection-start-line="6" selection-start-column="40" selection-end-line="6" selection-end-column="64" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/controller/collection/deleteCollection.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="500">
-              <caret line="20" column="15" lean-forward="true" selection-start-line="20" selection-start-column="15" selection-end-line="20" selection-end-column="15" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/tagsModel.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="15" column="15" lean-forward="true" selection-start-line="15" selection-start-column="15" selection-end-line="15" selection-end-column="15" />
+            <state relative-caret-position="300">
+              <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -129,26 +115,44 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/model/collectionModel.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="12" column="13" lean-forward="true" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+            <state relative-caret-position="725">
+              <caret line="29" column="23" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="23" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/controller/collection/createCollection.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="100">
+              <caret line="4" column="33" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/controller/tag/createTag.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="5" column="37" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="37" />
+            <state relative-caret-position="250">
+              <caret line="10" column="12" lean-forward="true" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/controller/collection/getCollection.js">
+        <entry file="file://$PROJECT_DIR$/src/controller/collection/getAllCollections.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="125">
-              <caret line="5" column="68" lean-forward="true" selection-start-line="5" selection-start-column="68" selection-end-line="5" selection-end-column="68" />
+              <caret line="5" column="76" selection-start-line="5" selection-start-column="76" selection-end-line="5" selection-end-column="76" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/model/tagsModel.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="350">
+              <caret line="14" column="13" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -157,16 +161,16 @@
         <entry file="file://$PROJECT_DIR$/src/controller/collection/getCollectionById.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="100">
-              <caret line="4" column="96" selection-start-line="4" selection-start-column="86" selection-end-line="4" selection-end-column="96" />
+              <caret line="4" column="85" selection-start-line="4" selection-start-column="85" selection-end-line="4" selection-end-column="85" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/controller/collection/index.js">
+        <entry file="file://$PROJECT_DIR$/src/routes/collection.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="50">
-              <caret line="2" column="47" selection-start-line="2" selection-start-column="47" selection-end-line="2" selection-end-column="47" />
+            <state relative-caret-position="175">
+              <caret line="7" column="86" selection-start-line="7" selection-start-column="86" selection-end-line="7" selection-end-column="86" />
             </state>
           </provider>
         </entry>
@@ -186,7 +190,11 @@
       <find>find</find>
       <find>'../controllers/user/index'</find>
       <find>findAndModify</find>
+      <find>&quot;</find>
     </findStrings>
+    <replaceStrings>
+      <replace>'</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -194,9 +202,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/model/index.js" />
-        <option value="$PROJECT_DIR$/routes/users/getUser.js" />
-        <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/src/model/index.js" />
         <option value="$PROJECT_DIR$/src/controllers/userController.js" />
         <option value="$PROJECT_DIR$/src/routes/users/getUser.js" />
@@ -213,10 +218,8 @@
         <option value="$PROJECT_DIR$/src/controller/user/userLogin.js" />
         <option value="$PROJECT_DIR$/src/controller/user/userLogout.js" />
         <option value="$PROJECT_DIR$/src/controller/user/createUser.js" />
-        <option value="$PROJECT_DIR$/src/controller/collection/index.js" />
         <option value="$PROJECT_DIR$/src/routes/explore.js" />
         <option value="$PROJECT_DIR$/src/config/config.js" />
-        <option value="$PROJECT_DIR$/src/routes/collection.js" />
         <option value="$PROJECT_DIR$/src/controller/user/index.js" />
         <option value="$PROJECT_DIR$/src/routes/user.js" />
         <option value="$PROJECT_DIR$/src/middleware/check.js" />
@@ -229,22 +232,27 @@
         <option value="$PROJECT_DIR$/src/model/userModel.js" />
         <option value="$PROJECT_DIR$/src/controller/user/common.js" />
         <option value="$PROJECT_DIR$/src/controller/user/updateUser.js" />
-        <option value="$PROJECT_DIR$/src/controller/collection/getCollectionById.js" />
         <option value="$PROJECT_DIR$/src/routes/index.js" />
-        <option value="$PROJECT_DIR$/src/controller/tag/createTag.js" />
         <option value="$PROJECT_DIR$/src/controller/tag/getTagsList.js" />
         <option value="$PROJECT_DIR$/src/controller/collection/common.js" />
         <option value="$PROJECT_DIR$/src/controller/tag/updateTagCount.js" />
         <option value="$PROJECT_DIR$/src/controller/tag/updateTag.js" />
         <option value="$PROJECT_DIR$/src/controller/tag/getTagCount.js" />
         <option value="$PROJECT_DIR$/src/model/collectionModel.js" />
-        <option value="$PROJECT_DIR$/src/controller/tag/index.js" />
-        <option value="$PROJECT_DIR$/src/routes/tags.js" />
-        <option value="$PROJECT_DIR$/src/model/tagsModel.js" />
         <option value="$PROJECT_DIR$/src/controller/collection/updateCollection.js" />
         <option value="$PROJECT_DIR$/src/controller/collection/getCollection.js" />
         <option value="$PROJECT_DIR$/src/controller/collection/createCollection.js" />
         <option value="$PROJECT_DIR$/src/controller/collection/deleteCollection.js" />
+        <option value="$PROJECT_DIR$/src/controller/collection/index.js" />
+        <option value="$PROJECT_DIR$/src/routes/collection.js" />
+        <option value="$PROJECT_DIR$/src/controller/collection/getCollectionsByTagId.js" />
+        <option value="$PROJECT_DIR$/src/controller/collection/getCollectionById.js" />
+        <option value="$PROJECT_DIR$/src/controller/tag/index.js" />
+        <option value="$PROJECT_DIR$/src/routes/tags.js" />
+        <option value="$PROJECT_DIR$/src/model/tagsModel.js" />
+        <option value="$PROJECT_DIR$/src/controller/tag/getTagById.js" />
+        <option value="$PROJECT_DIR$/src/controller/collection/getAllCollections.js" />
+        <option value="$PROJECT_DIR$/src/controller/tag/createTag.js" />
       </list>
     </option>
   </component>
@@ -269,8 +277,8 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="717" />
-    <option name="y" value="-8" />
+    <option name="x" value="662" />
+    <option name="y" value="67" />
     <option name="width" value="697" />
     <option name="height" value="735" />
   </component>
@@ -286,49 +294,6 @@
             <path>
               <item name="app-back-end" type="b2602c69:ProjectViewProjectNode" />
               <item name="app-back-end" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="app-back-end" type="b2602c69:ProjectViewProjectNode" />
-              <item name="app-back-end" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="app-back-end" type="b2602c69:ProjectViewProjectNode" />
-              <item name="app-back-end" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="app-back-end" type="b2602c69:ProjectViewProjectNode" />
-              <item name="app-back-end" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-              <item name="collection" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="app-back-end" type="b2602c69:ProjectViewProjectNode" />
-              <item name="app-back-end" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-              <item name="tag" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="app-back-end" type="b2602c69:ProjectViewProjectNode" />
-              <item name="app-back-end" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="middleware" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="app-back-end" type="b2602c69:ProjectViewProjectNode" />
-              <item name="app-back-end" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="app-back-end" type="b2602c69:ProjectViewProjectNode" />
-              <item name="app-back-end" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -350,8 +315,8 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Favorite-APP\app-back-end\src\controller\tag" />
-      <recent name="D:\Favorite-APP\app-back-end\src\model" />
       <recent name="D:\Favorite-APP\app-back-end\src\controller\collection" />
+      <recent name="D:\Favorite-APP\app-back-end\src\model" />
       <recent name="D:\Favorite-APP\app-back-end\src\controller" />
       <recent name="D:\Favorite-APP\app-back-end\src\controller\user" />
     </key>
@@ -439,12 +404,22 @@
       <workItem from="1550284856168" duration="10000" />
       <workItem from="1550284880683" duration="3001000" />
       <workItem from="1551235565077" duration="602000" />
-      <workItem from="1551237252484" duration="5823000" />
+      <workItem from="1551237252484" duration="8691000" />
+      <workItem from="1551334013699" duration="9223000" />
+      <workItem from="1551685195673" duration="3616000" />
+      <workItem from="1551787510183" duration="14000" />
+      <workItem from="1551787542684" duration="2132000" />
+      <workItem from="1552026166073" duration="59000" />
+      <workItem from="1552026237017" duration="599000" />
+      <workItem from="1552184878796" duration="4018000" />
+      <workItem from="1552207436294" duration="1197000" />
+      <workItem from="1552267033566" duration="627000" />
+      <workItem from="1552306577370" duration="681000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="116596000" />
+    <option name="totallyTimeSpent" value="141630000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -456,10 +431,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19704953" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18377976" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -503,9 +478,8 @@
           <option name="timeStamp" value="21" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/controller/collection/getCollection.js</url>
+          <url>file://$PROJECT_DIR$/src/controller/collection/getAllCollections.js</url>
           <line>8</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="22" />
         </line-breakpoint>
       </breakpoints>
@@ -515,8 +489,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/controllers/user/getUser.js" />
-    <entry file="file://$PROJECT_DIR$/src/controllers/user/createUser.js" />
     <entry file="file://$PROJECT_DIR$/src/controllers/user/index.js" />
     <entry file="file://$PROJECT_DIR$/src/controllers/user/updateUser.js" />
     <entry file="file://$PROJECT_DIR$/src/controller/user/login.js" />
@@ -630,13 +602,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/routes/collection.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="18" column="2" lean-forward="true" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/routes/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -681,10 +646,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/routes/tags.js">
+    <entry file="file://$PROJECT_DIR$/src/controller/tag/updateTag.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="11" column="2" lean-forward="true" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="2" />
+        <state relative-caret-position="150">
+          <caret line="6" column="64" selection-start-line="6" selection-start-column="40" selection-end-line="6" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/collection/updateCollection.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/collection/deleteCollection.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="15" column="61" selection-start-line="15" selection-start-column="61" selection-end-line="15" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/collection/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5" column="80" lean-forward="true" selection-start-line="5" selection-start-column="80" selection-end-line="5" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/collection/getCollectionsByTagId.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="8" column="33" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -695,80 +688,73 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/tag/index.js">
+    <entry file="file://$PROJECT_DIR$/src/controller/tag/getTagById.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="1" column="49" selection-start-line="1" selection-start-column="49" selection-end-line="1" selection-end-column="49" />
+        <state relative-caret-position="425">
+          <caret line="17" column="27" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/tag/updateTag.js">
+    <entry file="file://$PROJECT_DIR$/src/controller/tag/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="6" column="64" selection-start-line="6" selection-start-column="40" selection-end-line="6" selection-end-column="64" />
+        <state relative-caret-position="50">
+          <caret line="2" column="50" selection-start-line="2" selection-start-column="50" selection-end-line="2" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/routes/tags.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/collectionModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="725">
+          <caret line="29" column="23" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/collection/createCollection.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="4" column="33" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/collection/getAllCollections.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5" column="76" selection-start-line="5" selection-start-column="76" selection-end-line="5" selection-end-column="76" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/model/tagsModel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="15" column="15" lean-forward="true" selection-start-line="15" selection-start-column="15" selection-end-line="15" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/collection/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" column="47" selection-start-line="2" selection-start-column="47" selection-end-line="2" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/collection/updateCollection.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="10" column="26" lean-forward="true" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+        <state relative-caret-position="350">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/collection/getCollectionById.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
-          <caret line="4" column="96" selection-start-line="4" selection-start-column="86" selection-end-line="4" selection-end-column="96" />
+          <caret line="4" column="85" selection-start-line="4" selection-start-column="85" selection-end-line="4" selection-end-column="85" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/collectionModel.js">
+    <entry file="file://$PROJECT_DIR$/src/routes/collection.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="12" column="13" lean-forward="true" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/collection/getCollection.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="5" column="68" lean-forward="true" selection-start-line="5" selection-start-column="68" selection-end-line="5" selection-end-column="68" />
+        <state relative-caret-position="175">
+          <caret line="7" column="86" selection-start-line="7" selection-start-column="86" selection-end-line="7" selection-end-column="86" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/tag/createTag.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="5" column="37" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/collection/createCollection.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="21" column="46" selection-start-line="21" selection-start-column="46" selection-end-line="21" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/collection/deleteCollection.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="20" column="15" lean-forward="true" selection-start-line="20" selection-start-column="15" selection-end-line="20" selection-end-column="15" />
+        <state relative-caret-position="250">
+          <caret line="10" column="12" lean-forward="true" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
         </state>
       </provider>
     </entry>

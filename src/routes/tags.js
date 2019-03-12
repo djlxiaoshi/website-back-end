@@ -9,4 +9,6 @@ module.exports = function (router) {
   // 创建标签
   router.post('/tags', checkLogin, tagsController.createTag);
 
+  //  通过tagId获取标签信息
+  router.get('/tag', checkLogin, tagsController.getTagById);
 };

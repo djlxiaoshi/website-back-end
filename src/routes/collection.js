@@ -5,6 +5,8 @@ module.exports = function (router) {
   // 获取所有收藏
   router.get('/collection', checkLogin, collectionController.getAllCollections);
 
+  router.get('/getCollectionsByTagId', checkLogin, collectionController.getCollectionsByTagId);
+
   // 获取指定id收藏
   router.get('/collection/:id', checkLogin, collectionController.getCollectionById);
 

@@ -3,7 +3,7 @@ const CollectionModel = require('../../model/collectionModel');
 exports.getAllCollections = async (ctx, next) => {
   const sessionUser = ctx.session.user;
   const data = await CollectionModel.
-  find({ ownerId: sessionUser._id }, '_id tags title abstract url').
+  find({ ownerId: sessionUser._id }, '_id tags title abstract url createTime').
   populate('tags', 'label');
 
   ctx.body = {

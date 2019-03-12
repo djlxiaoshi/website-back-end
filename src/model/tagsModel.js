@@ -12,9 +12,10 @@ const TagSchema = new Schema({
     type: String,
     required: true
   },
-  collections: {
-    type: Array
-  },
+  collections: [{
+    type: String,
+    ref: 'collection'
+  }],
   followers: {
     type: Number,
     required: false

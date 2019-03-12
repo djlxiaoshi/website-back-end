@@ -12,7 +12,7 @@ exports.createTag = async (ctx, next) => {
   });
   ctx.body = {
     code: 0,
-    message: 'success',
+    message: '标签创建成功',
     data: data
   };
 };
